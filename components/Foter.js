@@ -15,7 +15,7 @@ function Foter() {
         <h5 className="font-bold">COMUNITY</h5>
         <p>Accessibility</p>
         <p>This is not a real site</p>
-        <p>it's awesome clone</p>
+        <p>its awesome clone</p>
         <p>Referrals accepted</p>
         <p>Papafam</p>{" "}
       </div>

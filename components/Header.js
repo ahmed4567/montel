@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 function Header() {
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-3 bg-white px-2 py-1 shadow-md md:px-4 md:py-1">
+    <header className="sticky top-0 z-50 grid grid-cols-3 w-full items-center bg-white px-2 py-1 shadow-md md:px-4 md:py-1">
       {/**left */}
       <div className="lift relative flex items-center h-6 cursor-pointer my-auto">
         <Image
@@ -20,9 +20,9 @@ function Header() {
         />
       </div>
       {/**midile */}
-      <div className="mid flex items-center md:border-2 rounded-full md:shadow-sm">
+      <div className="mid flex items-center h-fit  md:border-2 rounded-full md:shadow-sm">
         <input
-          className="flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400 text-sm  "
+          className="flex-grow md:pl-5 pl-1 bg-transparent outline-none text-gray-600 placeholder-gray-400 text-sm  "
           type="text"
           placeholder="Start your serch"
         />
@@ -34,11 +34,11 @@ function Header() {
           <p className="hidden md:flex font-bold text-lg ml-4 cursor-pointer ">
             Be A Host
           </p>
-          <GlobeAltIcon className="h-10 fill-blue-800  cursor-pointer" />
+          <GlobeAltIcon className="md:h-10 h-5 fill-blue-800  cursor-pointer" />
         </div>
         <div className="flex items-center border-2 rounded-full p-1 shadow-sm">
-          <Bars3Icon className="h-10  cursor-pointer" />
-          <UserCircleIcon className="h-10 fill-red-500  cursor-pointer" />
+          <Bars3Icon className="md:h-10 h-5 cursor-pointer" />
+          <UserCircleIcon className="md:h-10 h-5 fill-red-500  cursor-pointer" />
         </div>
       </div>
     </header>

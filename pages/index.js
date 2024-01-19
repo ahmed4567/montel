@@ -34,7 +34,7 @@ export default function Home({ exploreData, cardsData }) {
             ))}{" "}
           </div>
         </section>
-        <section className="pt-2 max-w-6xl mx-auto px-5">
+        <section className="pt-2 max-w-6xl mx-auto md:px-5">
           <LgCard
             title="The Greatest Outdoors"
             discrp="Wishlsit curated by Montil"

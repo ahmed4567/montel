@@ -15,8 +15,8 @@ function SmolCard({ img, location, distance }) {
           />
         </div>
         <div className="p-1">
-          <h1>{location}</h1>
-          <h2 className="text-gray-500">{distance}</h2>
+          <h1 className="text-sm font-bold">{location}</h1>
+          <h2 className="text-gray-500 text-sm ">{distance}</h2>
         </div>
       </div>
     </div>

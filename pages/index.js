@@ -7,6 +7,7 @@ import SmolCard from "../components/SmolCard";
 import MdCard from "../components/MdCard";
 import LgCard from "../components/LgCard";
 import Foter from "../components/Foter";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 export default function Home({ exploreData, cardsData }) {
   return (
     <main className="bg-white">
@@ -45,6 +46,7 @@ export default function Home({ exploreData, cardsData }) {
       <section className="relative bottom-0 left-0  bg-sky-200">
         <Foter />
       </section>
+      <SpeedInsights />
     </main>
   );
 }
@@ -53,6 +55,7 @@ export async function getServerSideProps() {
   const res = await fetch("https://www.jsonkeeper.com/b/4G1G");
   const json = await res.json();
   const exploreData = json;
+  console.log(exploreData);
   const res2 = await fetch("https://www.jsonkeeper.com/b/VHHT");
   const json2 = await res2.json();
   const cardsData = json2;

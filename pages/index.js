@@ -55,11 +55,9 @@ export async function getServerSideProps() {
   const res = await fetch("https://www.jsonkeeper.com/b/4G1G");
   const json = await res.json();
   const exploreData = json;
-  console.log(exploreData);
   const res2 = await fetch("https://www.jsonkeeper.com/b/VHHT");
   const json2 = await res2.json();
   const cardsData = json2;
-  console.log(cardsData);
   return {
     props: { exploreData: exploreData, cardsData: cardsData },
   };

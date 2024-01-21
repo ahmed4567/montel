@@ -11,11 +11,17 @@ import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRange } from "react-date-range";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 function Header() {
   const [serchInpout, setSerchInput] = useState("");
   const [startDate, setStrtDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [noOfGeust, setnoOfGeust] = useState(1);
+  const router = useRouter();
+  const restInpout = () => {
+    setSerchInput("");
+  };
 
   const selectionrange = {
     startDate: startDate,
@@ -29,7 +35,12 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 w-full items-center bg-white px-1 py-1 shadow-md md:px-4 md:py-2">
       {/**left */}
-      <div className="lift relative flex items-center h-6 cursor-pointer my-auto">
+      <div
+        onClick={() => {
+          router.push("/");
+        }}
+        className="lift relative flex items-center h-6 cursor-pointer my-auto"
+      >
         <Image
           alt="logo"
           src={logo}
@@ -75,8 +86,16 @@ function Header() {
             <UsersIcon className="h-5" />
             <input
               type="number"
+              value={noOfGeust}
+              min={1}
               className="w-12 pl-2 text-lg outline-none text-red-400 bg-white"
             />
+          </div>
+          <div className="flex">
+            <button onClick={restInpout} className="flex-grow text-gray-500">
+              Cansel{" "}
+            </button>
+            <button className="flex-grow text-red-400">Search</button>
           </div>
         </div>
       )}

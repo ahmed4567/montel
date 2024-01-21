@@ -21,6 +21,11 @@ a {
   box-sizing: border-box;
   color:black;
 }
+@layer components{
+  .btn{
+    @apply px-4 py-2   hover:shadow-lg active:scale-95 border rounded-full cursor-pointer transition transform duration-100 ease-out active:bg-gray-100 
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   html {

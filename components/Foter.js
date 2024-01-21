@@ -1,7 +1,7 @@
 import React from "react";
 function Foter() {
   return (
-    <div className=" grid grid-cols-2  max-w-6xl pt-2  text-center py-2 px-5 h-fit md:grid-cols-4 m-auto ">
+    <div className="relative bottom-0 left-0   grid grid-cols-2 pt-2  text-center px-5 md:px-[120px] h-fit md:grid-cols-4 m-auto  bg-sky-200">
       <div className="space-y-3 text-xs p-1 text-gray-800">
         <h5 className="font-bold border-b-2 border-black  transition transform duration-200">
           ABOUT

@@ -43,7 +43,7 @@ export default function Home({ exploreData, cardsData }) {
           />
         </section>
       </section>
-      <section className="relative bottom-0 left-0  bg-sky-200">
+      <section className="">
         <Foter />
       </section>
       <SpeedInsights />

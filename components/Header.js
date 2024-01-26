@@ -13,7 +13,7 @@ import { DateRange } from "react-date-range";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-function Header() {
+function Header({ placeholder }) {
   const [serchInpout, setSerchInput] = useState("");
   const [startDate, setStrtDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -22,7 +22,19 @@ function Header() {
   const restInpout = () => {
     setSerchInput("");
   };
-
+  const search = async () => {
+    router
+      .push({
+        pathname: "/search",
+        query: {
+          location: serchInpout,
+          startDate: startDate.toISOString(),
+          endDate: endDate.toISOString(),
+          noOfGeust,
+        },
+      })
+      .then(restInpout);
+  };
   const selectionrange = {
     startDate: startDate,
     endDate: endDate,
@@ -56,7 +68,7 @@ function Header() {
           onChange={(e) => setSerchInput(e.target.value)}
           className="flex-grow md:pl-5 pl-1 bg-transparent outline-none text-gray-600 placeholder-gray-400 text-sm  "
           type="text"
-          placeholder="Start your serch"
+          placeholder={placeholder || "Start your serch"}
         />
         <MagnifyingGlassCircleIcon className=" hidden md:inline-flex pr-1 h-10 fill-red-500  cursor-pointer py-1  " />
       </div>
@@ -88,14 +100,19 @@ function Header() {
               type="number"
               value={noOfGeust}
               min={1}
+              onChange={(e) => {
+                setnoOfGeust(e.target.value);
+              }}
               className="w-12 pl-2 text-lg outline-none text-red-400 bg-white"
             />
           </div>
           <div className="flex">
             <button onClick={restInpout} className="flex-grow text-gray-500">
-              Cansel{" "}
+              Cansel
             </button>
-            <button className="flex-grow text-red-400">Search</button>
+            <button onClick={search} className="flex-grow text-red-400">
+              Search
+            </button>
           </div>
         </div>
       )}

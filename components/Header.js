@@ -95,7 +95,14 @@ function Header({ placeholder }) {
               onChange={handleSlect}
             />
           </div>
-
+          <div className="hidden md:inline-flex">
+            <DateRangePicker
+              ranges={[selectionrange]}
+              minDate={new Date()}
+              rangeColors={["#fd5b61"]}
+              onChange={handleSlect}
+            />
+          </div>
           <div className="flex items-center border-b mb-4">
             <h2 className="text-2xl flex-grow">Number of Gustes</h2>
             <UsersIcon className="h-5" />

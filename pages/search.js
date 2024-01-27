@@ -28,7 +28,7 @@ function Search({ serchRes }) {
             <p className="btn">Romms and Beds</p>
             <p className="btn">More filters</p>
           </div>
-          <div className="flex-col">
+          <div className="flex-col space-y-2">
             {serchRes.map(
               ({ img, location, total, title, description, star, price }) => (
                 <InfoCard

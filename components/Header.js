@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/solid";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import { DateRange } from "react-date-range";
+import { DateRange, DateRangePicker } from "react-date-range";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -87,12 +87,15 @@ function Header({ placeholder }) {
       </div>
       {serchInpout && (
         <div className="flex flex-col w-[300px] col-span-3 mx-auto md:w-fit">
-          <DateRange
-            ranges={[selectionrange]}
-            minDate={new Date()}
-            rangeColors={["#fd5b61"]}
-            onChange={handleSlect}
-          />
+          <div className="md:hidden">
+            <DateRange
+              ranges={[selectionrange]}
+              minDate={new Date()}
+              rangeColors={["#fd5b61"]}
+              onChange={handleSlect}
+            />
+          </div>
+
           <div className="flex items-center border-b mb-4">
             <h2 className="text-2xl flex-grow">Number of Gustes</h2>
             <UsersIcon className="h-5" />
